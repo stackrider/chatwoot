@@ -3,7 +3,6 @@ const {
   API_CHANNEL_THUMBNAIL: apiChannelThumbnail,
   APP_VERSION: appVersion,
   AZURE_APP_ID: azureAppId,
-  BRAND_NAME: brandName,
   CHATWOOT_INBOX_TOKEN: chatwootInboxToken,
   CSML_EDITOR_HOST: csmlEditorHost,
   CREATE_NEW_ACCOUNT_FROM_DASHBOARD: createNewAccountFromDashboard,
@@ -15,12 +14,15 @@ const {
   LOGO_THUMBNAIL: logoThumbnail,
   LOGO: logo,
   LOGO_DARK: logoDark,
-  PRIVACY_URL: privacyURL,
-  TERMS_URL: termsURL,
-  WIDGET_BRAND_URL: widgetBrandURL,
   DISABLE_USER_PROFILE_UPDATE: disableUserProfileUpdate,
   DEPLOYMENT_ENV: deploymentEnv,
 } = window.globalConfig || {};
+
+const brandName = 'GLXMart';
+const brandURL = 'https://www.glxmart.com';
+const widgetBrandURL = 'https://www.glxmart.com';
+const privacyURL = 'https://www.glxmart.com/support-chat/privacy';
+const termsURL = 'https://www.glxmart.com/support-chat/terms';
 
 const state = {
   apiChannelName,
