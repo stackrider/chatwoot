@@ -35,7 +35,7 @@ jobs:
       - name: replace docker tag if master
         if: github.ref_name == 'master'
         run: |
-          echo "DOCKER_TAG=chatwoot/chatwoot:latest-ce" >> $GITHUB_ENV
+          echo "DOCKER_TAG=stackrider/chatwoot:latest-ce" >> $GITHUB_ENV
 
       - name: Log in to GitHub Container Registry
         if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
