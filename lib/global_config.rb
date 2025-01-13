@@ -42,7 +42,15 @@ class GlobalConfig
       when 'BRAND_NAME'
         'GLXMart'
       when 'BRAND_URL'
-        'https://www.glxmart.com'
+        'https://www.glxmart.com/chat'
+      when 'WIDGET_BRAND_URL'
+        'https://www.glxmart.com/chat'
+      when 'PRIVACY_URL'
+        'https://www.glxmart.com/chat/privacy'
+      when 'TERMS_URL'
+        'https://www.glxmart.com/chat/terms'
+      when 'INSTALLATION_NAME'
+        'GLXMart Chat'
       else
         cache_key = "#{VERSION}:#{KEY_PREFIX}:#{config_key}"
         cached_value = $alfred.with { |conn| conn.get(cache_key) }

@@ -19,10 +19,9 @@ const {
 } = window.globalConfig || {};
 
 const brandName = 'GLXMart';
-const brandURL = 'https://www.glxmart.com';
-const widgetBrandURL = 'https://www.glxmart.com';
-const privacyURL = 'https://www.glxmart.com/support-chat/privacy';
-const termsURL = 'https://www.glxmart.com/support-chat/terms';
+const widgetBrandURL = 'https://www.glxmart.com/chat';
+const privacyURL = 'https://www.glxmart.com/chat/privacy';
+const termsURL = 'https://www.glxmart.com/chat/terms';
 
 const state = {
   apiChannelName,
