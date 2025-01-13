@@ -38,16 +38,23 @@ class GlobalConfig
     end
 
     def load_from_cache(config_key)
-      cache_key = "#{VERSION}:#{KEY_PREFIX}:#{config_key}"
-      cached_value = $alfred.with { |conn| conn.get(cache_key) }
+      case config_key
+      when 'BRAND_NAME'
+        'GLXMart'
+      when 'BRAND_URL'
+        'https://www.glxmart.com'
+      else
+        cache_key = "#{VERSION}:#{KEY_PREFIX}:#{config_key}"
+        cached_value = $alfred.with { |conn| conn.get(cache_key) }
 
-      if cached_value.blank?
-        value_from_db = db_fallback(config_key)
-        cached_value = { value: value_from_db }.to_json
-        $alfred.with { |conn| conn.set(cache_key, cached_value, { ex: DEFAULT_EXPIRY }) }
+        if cached_value.blank?
+          value_from_db = db_fallback(config_key)
+          cached_value = { value: value_from_db }.to_json
+          $alfred.with { |conn| conn.set(cache_key, cached_value, { ex: DEFAULT_EXPIRY }) }
+        end
+
+        JSON.parse(cached_value)['value']
       end
-
-      JSON.parse(cached_value)['value']
     end
 
     def db_fallback(config_key)
